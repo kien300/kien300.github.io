@@ -4,20 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- ============================================================
-     EDIT THESE TWO LINES: they control your browser tab title
-     and what Google shows underneath your link in search results.
-     ============================================================ -->
-<title>YOUR NAME</title>
-<meta name="description" content="YOUR NAME, POSITION at UNIVERSITY. Research on TOPIC.">
+<title>Kien Tri Nguyen</title>
+<meta name="description" content="Kien Tri Nguyen, PhD student in Geography and the Environment at Syracuse University. Research on climate extremes, variability, and agriculture.">
 
 <style>
   /* ----------------------------------------------------------
-     COLOURS — change these four values to restyle the whole page
+     COLOURS — change these to restyle the whole page at once
      ---------------------------------------------------------- */
   :root {
-    --ink:    #1a1a1a;   /* main text            */
-    --muted:  #6b6b6b;   /* dates, secondary text */
+    --ink:    #1a1a1a;   /* main text             */
+    --muted:  #6b6b6b;   /* secondary text        */
     --link:   #1f5673;   /* link colour           */
     --rule:   #e2e2e2;   /* divider lines         */
     --measure: 46rem;    /* max text width        */
@@ -41,7 +37,7 @@
   a:hover { text-decoration: underline; }
   a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
 
-  /* ---------------- Header: photo + name + links ---------------- */
+  /* ---------------- Header ---------------- */
   header {
     display: flex;
     gap: 1.75rem;
@@ -52,7 +48,7 @@
   header img {
     width: 140px;
     height: 140px;
-    object-fit: cover;      /* crops rather than squashes */
+    object-fit: cover;
     border-radius: 3px;
     flex-shrink: 0;
   }
@@ -70,15 +66,15 @@
     font-size: 0.95rem;
   }
 
-  /* Small text links under your name: email / CV / Scholar / ORCID */
   .contact {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 0.85rem;
     letter-spacing: 0.02em;
+    line-height: 2;
   }
-  .contact a { margin-right: 1rem; display: inline-block; }
+  .contact a, .contact span { margin-right: 1rem; display: inline-block; }
 
-  /* ---------------- Body sections ---------------- */
+  /* ---------------- Sections ---------------- */
   h2 {
     font-size: 1.15rem;
     font-weight: normal;
@@ -90,35 +86,47 @@
     margin: 3rem 0 1.25rem;
   }
 
+  /* Subsection headings inside a section — smaller and quieter than h2,
+     distinguished by a sans-serif face rather than by size alone. */
   h3 {
-    font-size: 1rem;
-    margin: 2rem 0 0.6rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 2.25rem 0 0.9rem;
   }
+  h2 + .note + h3,
+  h2 + h3 { margin-top: 1.5rem; }   /* tighter when it follows a section head */
 
   p { margin: 0 0 1rem; }
 
-  /* ---------------- Publication list ---------------- */
-  ol.pubs {
-    padding-left: 1.6rem;
-    margin: 0;
-  }
-  ol.pubs > li {
+  /* ---------------- Lists ---------------- */
+  /* One list style across every subsection so publications, reports,
+     datasets and tools all sit on the same visual grid. */
+  ul.plain { list-style: none; padding-left: 0; margin: 0; }
+  ul.plain > li {
     margin-bottom: 1.1rem;
-    padding-left: 0.3rem;
+    padding-left: 1.15rem;
+    text-indent: -1.15rem;   /* hanging indent, as in a reference list */
   }
-  ol.pubs em { color: var(--muted); }   /* journal names */
+  ul.plain em { color: var(--muted); }
+  ul.plain .meta { text-indent: 0; }
 
-  /* the small [pdf] and media-coverage links */
   .meta {
     display: block;
-    margin-top: 0.25rem;
+    margin-top: 0.2rem;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 0.8rem;
     color: var(--muted);
   }
 
-  ul.plain { list-style: none; padding-left: 0; }
-  ul.plain > li { margin-bottom: 1rem; }
+  .note {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
 
   footer {
     margin-top: 4rem;
@@ -128,7 +136,7 @@
     color: var(--muted);
   }
 
-  /* ---------------- Phones: stack the header ---------------- */
+  /* ---------------- Phones ---------------- */
   @media (max-width: 34rem) {
     body { padding-top: 2.25rem; font-size: 16px; }
     header { flex-direction: column; gap: 1.1rem; }
@@ -142,96 +150,188 @@
 
 <!-- ================= HEADER ================= -->
 <header>
-  <!-- Put your photo at img/photo.jpg -->
-  <img src="img/photo.jpg" alt="Photograph of YOUR NAME">
+  <img src="img/photo.jpg" alt="Photograph of Kien Tri Nguyen">
 
   <div>
-    <h1>YOUR NAME</h1>
+    <h1>Kien Tri Nguyen</h1>
     <p class="affiliation">
-      POSITION,
-      <a href="https://DEPARTMENT-URL">Department of SUBJECT</a>,
-      UNIVERSITY
+      PhD Student,
+      <a href="https://www.maxwell.syr.edu/academics/geography-and-the-environment">Geography and the Environment</a>,
+      Syracuse University
     </p>
 
-    <!-- Writing the email like this instead of a mailto: link
-         keeps most spam crawlers from harvesting it. -->
     <p class="contact">
-      <span>yourname [at] university.edu</span>
+      <span>knguye38 [at] syr.edu</span>
       <a href="files/cv.pdf">CV</a>
-      <a href="https://scholar.google.com/citations?user=YOUR_ID">Google&nbsp;Scholar</a>
-      <a href="https://orcid.org/0000-0000-0000-0000">ORCID</a>
+      <a href="https://scholar.google.com/citations?user=arfjTPsAAAAJ&amp;hl=en">Google&nbsp;Scholar</a>
+      <a href="https://orcid.org/0000-0002-6022-8563">ORCID</a>
+      <a href="https://www.linkedin.com/in/kientringuyen/">LinkedIn</a>
       <a href="https://github.com/kien300">GitHub</a>
     </p>
   </div>
 </header>
 
 <!-- ================= BIO ================= -->
-<!-- Two or three sentences. Say what you study and why it matters.
-     Keep it shorter than you think it should be. -->
 <p>
-  I study TOPIC — the mechanisms that drive it, how it is changing, and what
-  that means for AREA OF APPLICATION. My work combines METHOD ONE with
-  METHOD TWO.
-</p>
-
-<!-- Delete this block if you are not recruiting. -->
-<h3>Interested in working together?</h3>
-<p>
-  Get in touch if you would like to join the group as an undergraduate,
-  masters, or PhD student.
+  I study how climate variability and extremes interact with agriculture. I am
+  interested in understanding the impacts of climate extremes such as temperature,
+  rainfall, droughts, and compound extremes on agriculture. I am also interested
+  in measuring and disentangling the effects of different climate forcings on
+  observed climate trends.
 </p>
 
 <!-- ================= PUBLICATIONS ================= -->
-<h2>Peer-reviewed publications</h2>
+<h2>Selected publications</h2>
 
-<!-- Newest first. Bold your own name so readers can find you quickly.
-     Copy one <li> block to add a paper. -->
-<ol class="pubs">
-  <li>
-    Coauthor, A., <strong>Your Name</strong>. Title of the paper goes here.
-    (2026). <em>Journal Name</em>.
-    <a href="https://doi.org/10.XXXX/XXXXX">doi</a>
-    &nbsp;<a href="papers/YourName-2026-Journal.pdf">[pdf]</a>
-    <span class="meta">
-      Media coverage: <a href="https://example.com">Outlet</a>,
-      <a href="https://example.com">Outlet</a>
-    </span>
-  </li>
+<p class="note">
+  Full list on
+  <a href="https://scholar.google.com/citations?user=arfjTPsAAAAJ&amp;hl=en">Google Scholar</a>.
+  Published under the name variants Nguyen K.T., Nguyen T.K., and N. Kien.
+</p>
 
-  <li>
-    <strong>Your Name</strong>, Coauthor, B. Another paper title.
-    (2025). <em>Journal Name</em>.
-    <a href="https://doi.org/10.XXXX/XXXXX">doi</a>
-  </li>
-
-  <li>
-    <strong>Your Name</strong>. An earlier paper.
-    (2024). <em>Journal Name</em>.
-    <a href="https://doi.org/10.XXXX/XXXXX">doi</a>
-  </li>
-</ol>
-
-<!-- Delete any section below that does not apply to you. -->
-
-<h3>Book chapters</h3>
+<h3>Under review</h3>
 <ul class="plain">
   <li>
-    <strong>Your Name</strong>, Coauthor, C. (2024). "Chapter title."
-    <em>Book Title</em>. Eds. Editor, D. Publisher.
+    Yang, X., Gao, P., Perreault, T., &amp; <strong>Nguyen, K.</strong> (2026).
+    A Landsat-based approach for peatland mapping in South America.
+    <em>Under review.</em>
   </li>
 </ul>
 
-<h3>Other writing</h3>
+<h3>Peer-reviewed articles</h3>
 <ul class="plain">
   <li>
-    <strong>Your Name</strong>.
-    <a href="https://example.com">Title of a public-facing article.</a>
-    Published March 2025 in <em>Outlet</em>.
+    Reymondin, L., Vantalon, T., Pham, H. T. M., Le, H. T., Huynh, T. T. T.,
+    Hernandez, R., Even, B., Nguyen, T. C., Phan, T. V.,
+    <strong>Nguyen, K. T.</strong>, &amp; Béné, C. (2024).
+    Using free Wi-Fi to assess impact of COVID-19 pandemic on traditional wet
+    markets in Hanoi. <em>Food Security</em>, 16(1), 223–241.
+    <a href="https://doi.org/10.1007/s12571-023-01417-w">doi</a>
+  </li>
+
+  <li>
+    <strong>Nguyen, K. T.</strong>, Craparo, A., Nguyen, P. M.,
+    Turreira-García, N., Talsma, T., Deniau, A., Bossolasco, L., Le, T. D.,
+    &amp; Bosselmann, A. S. (2023).
+    ThIRST: Targeted IRrigation Support Tool for sustainable coffee production.
+    <em>Frontiers in Sustainable Food Systems</em>, 7.
+    <a href="https://doi.org/10.3389/fsufs.2023.1267388">doi</a>
+  </li>
+
+  <li>
+    Basel, A. M., <strong>Nguyen, K. T.</strong>, Arnaud, E., &amp;
+    Craparo, A. C. W. (2023).
+    The foundations of big data sharing: A CGIAR international research
+    organization perspective.
+    <em>Frontiers in Environmental Science</em>, 11.
+    <a href="https://doi.org/10.3389/fenvs.2023.1107393">doi</a>
+  </li>
+
+  <li>
+    Beal, T., Le, T. D., Trinh, H. T., Burra, D. D., Béné, C., Huynh, T. T. T.,
+    Truong, M. T., Nguyen, S. D., Tran, D. T., <strong>Nguyen, K. T.</strong>,
+    Hoang, H. T. T., de Haan, S., &amp; Jones, A. D. (2020).
+    Child overweight or obesity is associated with modifiable and geographic
+    factors in Vietnam. <em>Nutrients</em>, 12(5), 1286.
+    <a href="https://doi.org/10.3390/nu12051286">doi</a>
   </li>
 </ul>
+
+<h3>Reports</h3>
+
+<ul class="plain">
+  <li>
+    Minoarivelo, O. H., Craparo, A., Basel, A. M., <strong>Nguyen, K. T.</strong>,
+    Ouedraogo, Y., Douglas, W., Melly, B., Dao, H., Carneiro, B., Pacillo, G.,
+    &amp; Läderach, P. (2025).
+    <em>The Compound Risk Framework: Assessing fragility and key drivers of food
+    insecurity in Haiti, Mozambique and Ghana.</em>
+    <a href="https://hdl.handle.net/10568/177396">link</a>
+  </li>
+
+  <li>
+    Craparo, A., Minoarivelo, H. O., Birner, J., <strong>Nguyen, K.</strong>,
+    Basel, A., Läderach, P., Liebig, T., Guariso, D., &amp; Guerrero, O. (2024).
+    <em>Compound Risk and Crisis Assessment.</em> CGIAR System Organization.
+    <a href="https://hdl.handle.net/10568/159782">link</a>
+  </li>
+
+  <li>
+    Basel, A. M., <strong>Nguyen, K. T.</strong>, Minoarivelo, O., &amp;
+    Craparo, A. C. W. (2023).
+    <em>Improved fragility and risk indicators for anticipatory action in food,
+    land, and water systems.</em> CGIAR FOCUS Climate Security.
+    <a href="https://hdl.handle.net/10568/135954">link</a>
+  </li>
+</ul>
+
+<h3>Datasets and tools</h3>
+
+<ul class="plain">
+  <li>
+    Craparo, A. C. W., Basel, A., <strong>Nguyen, K. T.</strong>, Nguyen, T. T.,
+    Mai Vu, N. P., Nguyen, L. H., Pham, G. H., &amp; Talsma, T. (2023).
+    <em>Climate Resilience Platform.</em>
+    <a href="https://hdl.handle.net/10568/138869">link</a>
+    <span class="meta">Tool</span>
+  </li>
+
+  <li>
+    Louis, R., Hieu, L. T., Thibaud, V., Huong, P., Trong, P., &amp;
+    <strong>Kien, N.</strong> (2021).
+    <em>Free WiFi to monitor flow in Hanoian traditional markets.</em> Zenodo.
+    <a href="https://doi.org/10.5281/zenodo.5707312">doi</a>
+    <span class="meta">Dataset</span>
+  </li>
+
+  <li>
+    Le, L., Sain, G., Czaplicki, S., Guerten, N., Shikuku, K. M., Grosjean, G.,
+    Läderach, P., &amp; <strong>Nguyen, K.</strong> (2019).
+    <em>Baseline data for farm level and community aggregate economic impacts of
+    adopting climate smart agricultural practices in Vietnam and Nicaragua.</em>
+    <a href="https://agris.fao.org/search/en/providers/122441/records/6878f02e5d9ad5f58d6089ff">link</a>
+    <span class="meta">Dataset</span>
+  </li>
+</ul>
+
+<!-- ================= PRESENTATIONS ================= -->
+<h2>Selected presentations</h2>
+
+<ul class="plain">
+  <li>
+    <strong>Nguyen, K.</strong>, &amp; Coffel, E. (2026).
+    Quantifying crop production impact on evapotranspirative cooling in the US
+    breadbasket. <em>AGU Annual Meeting</em>, San Francisco.
+    <span class="meta">Oral · December 2026</span>
+  </li>
+
+  <li>
+    <strong>Nguyen, K.</strong>, Basel, A., Pham, G., Nguyen, N., Talsma, T.,
+    &amp; Craparo, A. (2026).
+    Warmer nights negatively impact global potato production.
+    <em>AGU Annual Meeting</em>, San Francisco.
+    <span class="meta">Poster · December 2026</span>
+  </li>
+
+  <li>
+    <strong>Nguyen, K.</strong>, Coffel, E., &amp; Mankin, J. S. (2025).
+    Evaluating observed and modeled wet-bulb temperature trends over global
+    croplands. <em>AGU Annual Meeting</em>, New Orleans.
+    <span class="meta">Oral · December 2025</span>
+  </li>
+</ul>
+
+<!-- ================= TEACHING ================= -->
+<h2>Teaching</h2>
+
+<p>
+  Teaching Assistant at Syracuse University for GEO 155 (The Natural Environment)
+  and GEO 215 (Global Environmental Change) — leading weekly discussion sections
+  and office hours.
+</p>
 
 <footer>
-  © YOUR NAME 2026
+  © Kien Tri Nguyen 2026
 </footer>
 
 </body>
